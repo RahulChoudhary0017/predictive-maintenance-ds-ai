@@ -34,79 +34,152 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section" style="min-height: 50vh; display: flex; align-items: center; padding-top: 6rem;">
+
+  <section class="hero-section contact-hero">
+
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8 offset-lg-2 text-center fade-up">
-          <span class="badge-custom mb-3">
-            <i class="bi bi-chat-dots"></i> Get In Touch
-          </span>
-          <h1 class="hero-title mb-4">
-            Hum Se <span class="gradient-text">Connect Karo</span>
-          </h1>
-          <p class="hero-subtitle">
-            Kisi bhi swal ya suggestion ke liye hum aapke liye available hain. Hum aapse sunna pasand karenge!
-          </p>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9 text-center fade-up">
+
+                <span class="badge-custom mb-3">
+
+                    <i class="bi bi-envelope-paper"></i>
+
+                    Let's Connect
+
+                </span>
+
+                <h1 class="hero-title">
+
+                    Contact
+
+                    <span class="gradient-text">
+
+                        Our Team
+
+                    </span>
+
+                </h1>
+
+                <p class="hero-subtitle mt-4">
+
+                    We'd love to hear from you. Whether you have a question,
+                    feedback, project idea, or collaboration opportunity,
+                    feel free to get in touch with us.
+
+                    Our team is always ready to assist you.
+
+                </p>
+
+            </div>
+
         </div>
-      </div>
+
     </div>
+
   </section>
 
   <!-- CONTACT SECTION -->
   <section class="contact-section">
     <div class="container">
-      <div class="row g-5 mb-5">
-        <!-- Contact Form -->
+      <div class="row align-items-center g-5">
+        <!-- CONTACT FORM -->
+
         <div class="col-lg-6 fade-in-scroll">
-          <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(30, 41, 59, 0.8)); border: 2px solid rgba(245, 158, 11, 0.3); border-radius: 1.5rem; padding: 2.5rem;">
-            <h3 class="text-warning fw-bold mb-4">Send Me Message</h3>
-            <form>
-              <div class="mb-3">
-                <label class="form-label text-secondary fw-bold">Name</label>
-                <input type="text" class="form-control-custom" placeholder="Enter your Name" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label text-secondary fw-bold">Email</label>
-                <input type="email" class="form-control-custom" placeholder="Enter your Email" required>
-              </div>
-              <div class="mb-3">
-                <label class="form-label text-secondary fw-bold">Subject</label>
-                <input type="text" class="form-control-custom" placeholder="EnterMessage Subject" required>
-              </div>
-              <div class="mb-4">
-                <label class="form-label text-secondary fw-bold">Message</label>
-                <textarea class="form-control-custom" rows="5" placeholder="Enter your message here..." required></textarea>
-              </div>
-              <button type="submit" class="btn-predict-submit w-100">
-                <i class="bi bi-send"></i> Send Message
-              </button>
-            </form>
+
+          <div class="contact-form-box">
+
+            <h2 class="contact-title">
+
+              <i class="bi bi-send-fill"></i>
+
+                Send a Message
+
+            </h2>
+
+            <p class="contact-description">
+
+              Have a question or would like to discuss a project?
+              Fill out the form below and our team will get back to you shortly.
+
+            </p>
+
+          <form>
+
+          <div class="mb-4">
+
+            <label>Name</label>
+
+            <input type="text"
+                class="form-control-custom"
+                placeholder="Enter your full name">
+
           </div>
+
+          <div class="mb-4">
+
+            <label>Email Address</label>
+
+            <input type="email"
+                class="form-control-custom"
+                placeholder="Enter your email">
+
+          </div>
+
+          <div class="mb-4">
+
+            <label>Subject</label>
+
+              <input type="text"
+                class="form-control-custom"
+                placeholder="Subject">
+
+          </div>
+
+          <div class="mb-4">
+
+          <label>Message</label>
+
+            <textarea rows="6"
+                class="form-control-custom"
+                placeholder="Write your message..."></textarea>
+
+          </div>
+
+          <button class="btn-predict-submit w-100">
+
+            <i class="bi bi-send-fill"></i>
+
+            Send Message
+
+          </button>
+
+        </form>
+
         </div>
 
-        <!-- Contact Info -->
-        <div class="col-lg-6 fade-in-scroll" style="--delay: 0.2s;">
-          <div style="display: flex; flex-direction: column; gap: 2rem;">
-            <!-- Email -->
-            <div class="contact-card">
-              <i class="bi bi-envelope-fill"></i>
-              <h5>Email</h5>
-              <p>
-                <a href="mailto:support@infotact.com" class="contact-link">support@infotact.com</a>
-              </p>
-              <small class="text-secondary">We reply within 24 hours</small>
+        </div>
+
+
+          <div class="col-lg-6 fade-in-scroll">
+
+            <div class="contact-image-wrapper">
+
+              <img
+
+                src="{{ url_for('static', filename='images/contact.jpg') }}"
+
+              class="contact-image"
+
+              alt="AI Engine Doctor">
+
+              <div class="contact-glow"></div>
+
             </div>
 
-            <!-- Phone -->
-            <div class="contact-card">
-              <i class="bi bi-telephone-fill"></i>
-              <h5>Phone</h5>
-              <p>
-                <a href="tel:+919057508214" class="contact-link">+91-9057508214</a>
-              </p>
-              <small class="text-secondary">24 Hours, 7 Days a week</small>
-            </div>
+          </div>
 
             <!-- Location -->
             <div class="contact-card">

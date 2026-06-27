@@ -82,6 +82,30 @@
         </div>
       </div>
 
+      <!-- ENGINE SHOWCASE SECTION -->
+      <div class="row g-4 mt-4 align-items-center">
+
+      <!-- LEFT IMAGE -->
+    <div class="col-lg-6 fade-in-scroll">
+        <div class="showcase-image-card">
+            <img src="{{ url_for('static', filename='images/engine1.png') }}"
+                 alt="AI Engine Monitoring"
+                 class="showcase-image">
+        </div>
+    </div>
+
+      <!-- RIGHT IMAGE -->
+    <div class="col-lg-6 fade-in-scroll" style="--delay:0.2s;">
+        <div class="showcase-image-card">
+            <img src="{{ url_for('static', filename='images/engine2.png') }}"
+                 alt="Predictive Maintenance"
+                 class="showcase-image">
+        </div>
+    </div>
+
+      </div>
+      <div class="my-5"></div>
+
       <!-- HISTORY TABLE -->
       {% if records %}
       <div class="fade-in-scroll" style="overflow-x: auto;">
@@ -206,16 +230,6 @@
           </div>
         </div>
       </div>
-      <div class="footer-divider"></div>
-      <div class="row">
-        <div class="col-md-6">
-          <p class="footer-credit">© 2026 Infotact. All rights reserved.</p>
-        </div>
-        <div class="col-md-6 text-end">
-          <small class="footer-credit">Built with ❤️ for predictive maintenance</small>
-        </div>
-      </div>
-    </div>
   </footer>
 
   <style>

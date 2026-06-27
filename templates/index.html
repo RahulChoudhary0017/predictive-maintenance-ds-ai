@@ -44,14 +44,14 @@
             <i class="bi bi-rocket-takeoff"></i> Next Gen Maintenance
           </span>
           <h1 class="hero-title">
-            Engine Ka <span class="gradient-text">Professional Health Check</span>
+            Engine <span class="gradient-text">Professional Health Check</span>
           </h1>
           <p class="hero-subtitle text-secondary mt-4">
             Advanced AI-powered predictive analytics with 95% accuracy. Real-time engine monitoring aur maintenance alerts.
           </p>
           <div class="d-flex gap-3 mt-5">
             <a href="#dashboard" class="btn btn-primary-custom btn-lg">
-              <i class="bi bi-speedometer2"></i> Dashboard Dekho
+              <i class="bi bi-speedometer2"></i> Dashboard 
             </a>
             <a href="#predict" class="btn btn-outline-custom btn-lg">
               <i class="bi bi-play-circle"></i> Prediction Check
@@ -59,22 +59,14 @@
           </div>
         </div>
         <div class="col-lg-6 text-center fade-up delay-2">
-          <div class="engine-box-hero">
-            <div class="wheel w1"></div>
-            <div class="wheel w2"></div>
-            <div class="engine-core-hero">
-              <i class="bi bi-gear-wide-connected"></i>
-              <div class="engine-status">
-                <span>ENGINE</span>
-                <small>Healthy ✓</small>
-              </div>
-            </div>
-            <div class="scan-bar-hero"></div>
-          </div>
-        </div>
-      </div>
+    <div class="hero-image-container">
+        <img src="{{ url_for('static', filename='images/engine-home.png') }}"
+             alt="AI Engine Doctor"
+             class="hero-image">
     </div>
-  </section>
+</div>
+</div>
+</div>
 
   <!-- DASHBOARD SECTION -->
   <section id="dashboard" class="dashboard-section">
@@ -180,72 +172,94 @@
         <p class="section-subtitle">Get a detailed analysis of your engine.</p>
       </div>
       
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="prediction-form-container fade-in-scroll">
+      <div class="row align-items-center g-5">
+
+    <!-- LEFT SIDE FORM -->
+    <div class="col-lg-7">
+        <div class="prediction-form-container fade-in-scroll">
             <form action="/predict" method="POST">
-              <div class="row g-4">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-label-custom">
-                      <i class="bi bi-motorcycle"></i> Engine Type
-                    </label>
-                    <select name="engine_type" class="form-control-custom" required>
-                      <option value="L">🏍️ Light (100-150cc)</option>
-                      <option value="M" selected>🏎️ Medium (150-250cc)</option>
-                      <option value="H">🛣️ Heavy (250cc+)</option>
-                    </select>
-                  </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label-custom">
+                                <i class="bi bi-motorcycle"></i> Engine Type
+                            </label>
+                            <select name="engine_type" class="form-control-custom" required>
+                                <option value="L">🏍️ Light (100-150cc)</option>
+                                <option value="M" selected>🏎️ Medium (150-250cc)</option>
+                                <option value="H">🛣️ Heavy (250cc+)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label-custom">
+                                <i class="bi bi-hourglass"></i> Usage Hours
+                            </label>
+                            <input type="number" name="tool_wear" class="form-control-custom" value="50" min="0" max="250" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label-custom">
+                                <i class="bi bi-thermometer"></i> Air Temperature (K)
+                            </label>
+                            <input type="number" name="air_temp" class="form-control-custom" value="298.5" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label-custom">
+                                <i class="bi bi-fire"></i> Engine Temperature (K)
+                            </label>
+                            <input type="number" name="process_temp" class="form-control-custom" value="309" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label-custom">
+                                <i class="bi bi-speedometer"></i> RPM
+                            </label>
+                            <input type="number" name="rpm" class="form-control-custom" value="1500" min="1000" max="3000" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label-custom">
+                                <i class="bi bi-lightning-fill"></i> Torque (Nm)
+                            </label>
+                            <input type="number" name="torque" class="form-control-custom" value="42" step="0.1" required>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-label-custom">
-                      <i class="bi bi-hourglass"></i> Usage Hours
-                    </label>
-                    <input type="number" name="tool_wear" class="form-control-custom" value="50" min="0" max="250" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-label-custom">
-                      <i class="bi bi-thermometer"></i> Air Temperature (K)
-                    </label>
-                    <input type="number" name="air_temp" class="form-control-custom" value="298.5" step="0.1" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-label-custom">
-                      <i class="bi bi-fire"></i> Engine Temperature (K)
-                    </label>
-                    <input type="number" name="process_temp" class="form-control-custom" value="309" step="0.1" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-label-custom">
-                      <i class="bi bi-speedometer"></i> RPM (Revolutions)
-                    </label>
-                    <input type="number" name="rpm" class="form-control-custom" value="1500" min="1000" max="3000" required>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="form-label-custom">
-                      <i class="bi bi-lightning-fill"></i> Torque (Nm)
-                    </label>
-                    <input type="number" name="torque" class="form-control-custom" value="42" step="0.1" required>
-                  </div>
-                </div>
-              </div>
-              <button type="submit" class="btn-predict-submit btn-lg w-100 mt-5">
-                <i class="bi bi-cpu"></i> PREDICT ENGINE HEALTH
-              </button>
+
+                <button type="submit" class="btn-predict-submit btn-lg w-100 mt-5">
+                    <i class="bi bi-cpu"></i> PREDICT ENGINE HEALTH
+                </button>
+
             </form>
-          </div>
         </div>
-      </div>
     </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="col-lg-5 text-center">
+        <div class="predict-image-box">
+            <img src="{{ url_for('static', filename='images/predict.jpg') }}"
+                 alt="AI Engine Doctor"
+                 class="predict-image">
+        </div>
+    </div>
+
+  </div>
+</div>
   </section>
 
   <!-- ABOUT US -->
@@ -374,14 +388,6 @@
           </div>
         </div>
       </div>
-      <div class="footer-divider"></div>
-      <div class="row">
-        <div class="col-md-6">
-          <p class="footer-credit">© 2026 Infotact. All rights reserved.</p>
-        </div>
-        <div class="col-md-6 text-end">
-          <small class="footer-credit">Built with ❤️ for predictive maintenance</small>
-        </div>
       </div>
     </div>
   </footer>
@@ -445,36 +451,6 @@
     });
   </script>
 </body>
-</html>
-        <div class="col-md-5">
-          <div class="contact-card">
-            <i class="bi bi-telephone-fill"></i>
-            <h5>📱 Phone</h5>
-            <p><a href="tel:+919057508214 " class="text-warning text-decoration-none">+91 9057508214</a></p>
-            <p class="small text-secondary">24 Hours Support</p>
-          </div>
-        </div>
-      </div>
-      <div class="row g-4 justify-content-center mt-2">
-        <div class="col-md-5">
-          <div class="contact-card">
-            <i class="bi bi-geo-alt-fill"></i>
-            <h5>📍 Location</h5>
-            <p>Infotact Internship</p>
-            <p class="small text-secondary">Building advanced AI solutions</p>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <div class="contact-card">
-            <i class="bi bi-clock-fill"></i>
-            <h5>⏰24 Hours Available</h5>
-            <p>24 Hours Support</p>
-            <p class="small text-secondary">Always here to help</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <footer class="text-center py-4 text-secondary border-top border-secondary border-opacity-10">
     <div class="container">

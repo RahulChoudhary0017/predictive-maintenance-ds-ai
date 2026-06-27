@@ -35,30 +35,80 @@
   </nav>
 
   <!-- HERO SECTION -->
-  <section class="hero-section" style="min-height: 60vh; display: flex; align-items: center; padding-top: 6rem;">
+  <section class="hero-section" style="min-height: 75vh; display: flex; align-items: center; padding-top: 6rem;">
+
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 fade-up">
-          <span class="badge-custom mb-3">
-            <i class="bi bi-clipboard-data"></i> Project Details
-          </span>
-          <h1 class="hero-title mb-4">
-            Predictive Engine <span class="gradient-text">Maintenance System</span>
-          </h1>
-          <p class="hero-subtitle">
-          An AI-powered predictive maintenance system that monitors engine health, analyzes critical parameters, and proactively predicts potential failures to improve reliability and reduce downtime.
-          </p>
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="col-lg-7 fade-up">
+
+                <span class="badge-custom mb-3">
+                    <i class="bi bi-clipboard-data"></i>
+                    Project Overview
+                </span>
+
+                <h1 class="hero-title mb-4">
+                    AI-Powered
+                    <span class="gradient-text">
+                        Predictive Engine Maintenance
+                    </span>
+                </h1>
+
+                <p class="hero-subtitle mb-4">
+
+                    The Predictive Engine Maintenance System is an intelligent
+                    machine learning application designed to monitor engine
+                    performance and predict potential failures before they occur.
+
+                    By analyzing critical operational parameters such as engine
+                    temperature, air temperature, rotational speed (RPM),
+                    torque, and usage hours, the system provides accurate
+                    health predictions that help minimize downtime,
+                    improve operational efficiency, and reduce maintenance costs.
+
+                </p>
+
+                <div class="d-flex flex-wrap gap-3 mt-4">
+
+                    <a href="/#predict" class="btn btn-primary-custom">
+
+                        <i class="bi bi-cpu"></i>
+                        Try Prediction
+
+                    </a>
+
+                    <a href="/about" class="btn btn-outline-custom">
+
+                        <i class="bi bi-info-circle"></i>
+                        Learn More
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="col-lg-5 text-center fade-up delay-2">
+
+                <div class="project-image-wrapper">
+
+                    <img src="{{ url_for('static', filename='images/project.jpg') }}"
+                         alt="Predictive Engine Maintenance"
+                         class="project-image">
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="col-lg-5 text-center fade-up delay-2">
-          <div class="stat-card" style="padding: 2.5rem; border-radius: 1.5rem;">
-            <i class="bi bi-diagram-3 fs-1 text-warning mb-3"></i>
-            <h3 class="text-warning fw-bold">Complete</h3>
-            <p>Full Stack Solution</p>
-            <small class="text-secondary">ML + Backend + Frontend</small>
-          </div>
-        </div>
-      </div>
+
     </div>
+
   </section>
 
   <!-- PROJECT DETAILS -->
