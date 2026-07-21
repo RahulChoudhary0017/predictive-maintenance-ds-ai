@@ -43,15 +43,15 @@ def predict_engine(form):
     fail = int(MODEL.predict(df)[0])
 
     if prob >= 0.6:
-        risk, msg = "danger", "Turant service karwao — engine kharab ho sakta hai!"
+        risk, msg = "danger", "Critical Alert: Immediate maintenance is required to prevent engine failure."
         days = max(3, int(15 * (1 - prob)))
         health = max(10, int(100 - prob * 100))
     elif prob >= 0.3:
-        risk, msg = "warning", "Jaldi service schedule karo."
+        risk, msg = "warning", "Warning: Engine is showing signs of potential failure."
         days = max(15, int(40 * (1 - prob)))
         health = max(40, int(75 - prob * 50))
     else:
-        risk, msg = "safe", "Engine healthy hai — maintenance continue rakho."
+        risk, msg = "safe", "Engine Status: Healthy. No immediate maintenance is required. Continue regular inspections."
         days = max(60, int(120 * (1 - prob)))
         health = max(70, int(95 - prob * 30))
 
@@ -87,7 +87,7 @@ def predict():
         return redirect(url_for("home"))
 
 
-@app.route("/history")
+@app.route("/history"if)
 def history():
     records = get_predictions()
     stats = get_stats()
@@ -114,7 +114,5 @@ def page_not_found(e):
     return render_template("404.html"), 404
 
 
-if __name__ == "__main__":
-    print("\n>>> Server: http://127.0.0.1:5000")
-    print(">>> Database: data/pridectiveengine.db\n")
-    app.run(host="127.0.0.1", port=5000, debug=True)
+ if __name__ == "__main__":
+    app.run(debug=True)
