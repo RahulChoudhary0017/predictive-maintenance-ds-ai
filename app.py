@@ -87,7 +87,11 @@ def predict():
         return redirect(url_for("home"))
 
 
-@app.route("/history"if)
+@app.route("/history")
+def history():
+    records = get_predictions()
+    stats = get_stats()
+    return render_template("history.html", records=records, stats=stats)
 def history():
     records = get_predictions()
     stats = get_stats()
