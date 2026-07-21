@@ -92,10 +92,6 @@ def history():
     records = get_predictions()
     stats = get_stats()
     return render_template("history.html", records=records, stats=stats)
-def history():
-    records = get_predictions()
-    stats = get_stats()
-    return render_template("history.html", records=records, stats=stats)
 
 
 @app.route("/about")
@@ -118,5 +114,5 @@ def page_not_found(e):
     return render_template("404.html"), 404
 
 
- if __name__ == "__main__":
+if __name__ == "__main__":
     app.run(debug=True)
